@@ -4,13 +4,17 @@ import doublelink.module.Node;
 import java.util.Comparator;
 
 public class DoubleLink<T> {
-    public int size;
+    private int size;
     private Node<T> first;
     private Node<T> last;
     public DoubleLink(){
         this.size = 0;
         this.first = null;
         this.last = null;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public boolean insertFirst(T data){
@@ -82,6 +86,24 @@ public class DoubleLink<T> {
             }
         }
         return false;
+    }
+
+    public boolean removeFirst(){
+        if(size > 0){
+            unlink(first);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean removeLast(){
+        if(size > 0){
+            unlink(last);
+            return true;
+        }else {
+            return false;
+        }
     }
 
     T unlink(Node<T> x) {

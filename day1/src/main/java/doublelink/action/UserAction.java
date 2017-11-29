@@ -41,5 +41,13 @@ public class UserAction {
         User userCompareByName = new User("Mike", 20);
         doubleLink.removeByComparator(userCompareByName, new UserNameComparator());
         doubleLink.display();
+        System.out.println(doubleLink.getSize());
+
+        //
+        doubleLink.insertFirst(user1);
+        doubleLink.insertLast(user2);
+        doubleLink.removeFirst();
+        doubleLink.removeLast();
+        doubleLink.display();
     }
 }
