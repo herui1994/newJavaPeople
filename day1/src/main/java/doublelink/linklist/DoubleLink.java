@@ -107,7 +107,6 @@ public class DoubleLink<T> {
     }
 
     T unlink(Node<T> x) {
-        // assert x != null;
         final T element = x.getData();
         final Node<T> right = x.getRight();
         final Node<T> left = x.getLeft();
